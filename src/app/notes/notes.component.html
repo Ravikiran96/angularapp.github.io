@@ -1,0 +1,12 @@
+<div  class="head"  [routerLink]="['desc',item.id]" *ngFor="let item of items1  | category : searchText;"
+ style="border-bottom: 1px solid lightgray;padding:20px;outline:none;">
+    <h6>{{inputValue}}</h6>
+    <!-- <h6>{{i}}</h6> -->
+    <!-- <h6 ><a class="text-secondary"> {{item.id}}</a></h6> -->
+    <h6><a class="text-secondary"> {{item.notes}}</a></h6>
+    <p>{{item.date | date:'shortTime'}}&nbsp; <span>{{item.description}}</span></p>
+</div>
+      
+     
+      
+  

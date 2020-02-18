@@ -1,0 +1,42 @@
+<nav class="navbar navbar-expand-lg navbar-light bg-light">
+  <a class="navbar-brand" href="#">Automate</a>
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+
+  <div class="collapse navbar-collapse" id="navbarSupportedContent">
+    <ul class="navbar-nav mr-auto">
+      <li class="nav-item active">
+        <a class="nav-link  btn btn-light text-white bg-secondary" href="#" style="padding:4px 26px;margin-right:20px;"><i class="fa fa-file" aria-hidden="true"></i></a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link btn btn-light text-white bg-secondary" href="#" style="padding:4px 26px;margin-right:20px;"><i class="fa fa-th-large" aria-hidden="true"></i></a>
+      </li>
+      <li class="nav-item" *ngFor="let product of notes">
+        <a class="nav-link btn btn-light text-white bg-secondary" (click)="delete(product)"  style="padding:4px 26px;margin-right:20px;"><i class="fa fa-trash" aria-hidden="true"></i></a>
+      </li>
+      <li class="nav-item"  *ngFor="let product of notes">
+        <a class="nav-link btn btn-light text-white bg-secondary" (click)="addtocart(product)" style="padding:4px 26px;margin-right:20px;"><i class="fa fa-edit"  aria-hidden="true"></i></a>
+      </li> 
+      <li class="nav-item active">
+        <a class="nav-link btn btn-light text-white bg-secondary" href="#" style="padding:4px 26px;"><i class="fa fa-lock" aria-hidden="true"></i></a>
+      </li>
+    </ul>
+    <form class="form-inline my-2 my-lg-0">
+      <input class="form-control mr-sm-2" [(ngModel)]="searchText" name="s1"  type="search" placeholder="Search" aria-label="Search" style="width:450px;">
+    </form>
+  </div>
+</nav>
+<div class="sidenav">
+ <app-notes [posts]="posts" [(inputValue)]="value"></app-notes>
+</div>
+<div class="main1">
+ 
+<h6 class="text-center text-secondary">{{date | date : 'medium'}}</h6>
+ <input type="text" class="in" class="form-control" 
+  [(ngModel)]="value">
+  <router-outlet></router-outlet>
+ <!-- <app-desc> </app-desc>   -->
+<!-- {{value}} -->
+
+</div>
